@@ -16,7 +16,7 @@ class Predict_proba (Resource):
        # parser.add_argument("woe_prev_cls2cur_opn_dd")
        # parser.add_argument("woe_prev_max_dpd")
        # parser.add_argument("woe_prev_cred_max_dpd_lp")
-        parser.add_argument("woe_gender")
+        parser.add_argument("woe_gender", type = float)
        # parser.add_argument("woe_working_industry")
        # parser.add_argument("woe_ddong_hist_found")
        # parser.add_argument("woe_prev_cic_loans")
