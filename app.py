@@ -13,14 +13,15 @@ class Predict_proba (Resource):
     
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('name', type = int)
+        parser.add_argument('name')
         args = parser.parse_args()
        # X=[args["woe_prev_cls2cur_opn_dd"], args["woe_prev_max_dpd"], args["woe_prev_cred_max_dpd_lp"], args["woe_gender"], args["woe_working_industry"], args["woe_ddong_hist_found"], args["woe_prev_cic_loans"], args["woe_age"], args["woe_JS_VAR_132"], args["woe_JS_VAR_101"], args["woe_gen_mar"], args["woe_cur_cic_loans"], args["woe_JS_VAR_159"], args["woe_antifraud_score"]]
        # X = [args["woe_gender"]]
        # model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
         X = args['name']
+        R = int(X)
 
-        return  X*2 , 200
+        return  R*2 , 200
 
         
 api.add_resource(Predict_proba,"/")
