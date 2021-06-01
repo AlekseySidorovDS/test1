@@ -16,7 +16,7 @@ class Predict_proba (Resource):
        # parser.add_argument("woe_prev_cls2cur_opn_dd")
        # parser.add_argument("woe_prev_max_dpd")
        # parser.add_argument("woe_prev_cred_max_dpd_lp")
-        parser.add_argument('woe_gender', , location="json", action='append')
+        parser.add_argument("woe_gender", , location="json", action='append')
        # parser.add_argument("woe_working_industry")
        # parser.add_argument("woe_ddong_hist_found")
        # parser.add_argument("woe_prev_cic_loans")
@@ -33,7 +33,7 @@ class Predict_proba (Resource):
        # X = [args["woe_gender"]]
        # model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
 
-        return  args['woe_gender'], Y, 200
+        return  args["woe_gender"], Y, 200
 
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
