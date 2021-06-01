@@ -33,7 +33,7 @@ class Predict_proba (Resource):
        # X = [args["woe_gender"]]
        # model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
 
-        return  args["woe_gender"], Y, 200
+        return  Y, 200
 
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
