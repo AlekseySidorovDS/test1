@@ -22,7 +22,7 @@ class Predict_proba (Resource):
         X = args['name']
         Y = args['test']
         R = int(X)
-        T = int(T)
+        T = int(Y)
 
         return  R*T , 200
 
