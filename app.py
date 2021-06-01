@@ -34,7 +34,7 @@ class Predict_proba (Resource):
        # model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
 
 
-        return  args["woe_prev_cls2cur_opn_dd"] , 200
+        return  args['woe_prev_cls2cur_opn_dd'] , 200
 
         
 api.add_resource(Predict_proba,"/")
