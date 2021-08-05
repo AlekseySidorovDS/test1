@@ -39,7 +39,7 @@ class Predict_proba (Resource):
         filename = 'XG_MODEL_R1_START_V1.sav'
         model0_main = pickle.load(open(filename, 'rb'))
 
-        model_result = model0_main.predict_proba(df)[1]
+        model_result = model0_main.predict_proba(X)[1]
         
 
 
