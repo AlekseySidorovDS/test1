@@ -13,41 +13,30 @@ class Predict_proba (Resource):
     
     def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('woe_prev_cls2cur_opn_dd')
-        parser.add_argument('woe_prev_max_dpd')
-        parser.add_argument('woe_prev_cred_max_dpd_lp')
-        parser.add_argument('woe_gender')
-        parser.add_argument('woe_working_industry')
-        parser.add_argument('woe_ddong_hist_found')
-        parser.add_argument('woe_prev_cic_loans')
-        parser.add_argument('woe_age')
-        parser.add_argument('woe_JS_VAR_132')
-        parser.add_argument('woe_JS_VAR_101')
-        parser.add_argument('woe_gen_mar')
-        parser.add_argument('woe_cur_cic_loans')
-        parser.add_argument('woe_JS_VAR_159')
-        parser.add_argument('woe_antifraud_score')       
-        args=parser.parse_args()
+        parser.add_argument("woe_prev_cls2cur_opn_dd")
+        parser.add_argument("woe_prev_max_dpd")
+        parser.add_argument("woe_prev_cred_max_dpd_lp")
+        parser.add_argument("woe_gender")
+        parser.add_argument("woe_working_industry")
+        parser.add_argument("woe_ddong_hist_found")
+        parser.add_argument("woe_prev_cic_loans")
+        parser.add_argument("woe_age")
+        parser.add_argument("woe_JS_VAR_132")
+        parser.add_argument("woe_JS_VAR_101")
+        parser.add_argument("woe_gen_mar")
+        parser.add_argument("woe_cur_cic_loans")
+        parser.add_argument("woe_JS_VAR_159")
+        parser.add_argument("woe_antifraud_score")
         
+        args=parser.parse_args()
         X=[args["woe_prev_cls2cur_opn_dd"], args["woe_prev_max_dpd"], args["woe_prev_cred_max_dpd_lp"], args["woe_gender"], args["woe_working_industry"], args["woe_ddong_hist_found"], args["woe_prev_cic_loans"], args["woe_age"], args["woe_JS_VAR_132"], args["woe_JS_VAR_101"], args["woe_gen_mar"], args["woe_cur_cic_loans"], args["woe_JS_VAR_159"], args["woe_antifraud_score"]]
 
-        array1 = np.array(X)
-        #columns = ["woe_prev_cls2cur_opn_dd","woe_prev_max_dpd","woe_prev_cred_max_dpd_lp","woe_gender","woe_working_industry"
-        #   ,"woe_ddong_hist_found","woe_prev_cic_loans","woe_age","woe_JS_VAR_132","woe_JS_VAR_101", "woe_gen_mar",
-        #  "woe_cur_cic_loans","woe_JS_VAR_159","woe_antifraud_score"]
-        #df = pd.DataFrame(data = array.reshape(1,-1), index = [1], columns = columns) 
-        #filename = 'XG_MODEL_R1_START_V1.sav'
-        #model0_main = pickle.load(open(filename, 'rb'))
+        model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
 
-        #model_result = model0_main.predict_proba(df)[:, 1]
-        
-
-
-        #return model_result  , 200
-        return array1, 200
+        return model_result, 200
 
         
-api.add_resource(Predict_proba,"/")
+api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
 
 if __name__ == "__main__":
    app.run()
