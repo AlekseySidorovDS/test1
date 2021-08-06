@@ -41,7 +41,7 @@ class Predict_proba (Resource):
         #model_result = XG_MODEL_R1_START_V1.predict_proba(test)[:,1]
 
 
-        return test[1], 200
+        return test, 200
 
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
