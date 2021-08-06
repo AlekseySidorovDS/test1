@@ -36,15 +36,15 @@ class Predict_proba (Resource):
            ,'woe_ddong_hist_found','woe_prev_cic_loans','woe_age','woe_JS_VAR_132','woe_JS_VAR_101', 'woe_gen_mar',
           'woe_cur_cic_loans','woe_JS_VAR_159','woe_antifraud_score']
         df = pd.DataFrame(data = array.reshape(1,-1), index = [1], columns = columns) 
-       # filename = 'XG_MODEL_R1_START_V1.sav'
-       # model0_main = pickle.load(open(filename, 'rb'))
+        filename = 'XG_MODEL_R1_START_V1.sav'
+        model0_main = pickle.load(open(filename, 'rb'))
 
-       # model_result = model0_main.predict_proba(X)[1]
+        model_result = model0_main.predict_proba(df)[1]
         
 
 
         #return model_result  , 200
-        return df, 200
+        return model_result, 200
 
         
 api.add_resource(Predict_proba,"/")
