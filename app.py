@@ -44,7 +44,7 @@ class Predict_proba (Resource):
 
 
         #return model_result  , 200
-        return args, 200
+        return args["woe_prev_cls2cur_opn_dd"], 200
 
         
 api.add_resource(Predict_proba,"/")
