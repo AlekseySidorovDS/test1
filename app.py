@@ -34,12 +34,12 @@ class Predict_proba (Resource):
         test = np.reshape(test,(1, -1))
         
         columns = ['woe_prev_cls2cur_opn_dd', 'woe_prev_max_dpd', 'woe_prev_cred_max_dpd_lp', 'woe_gender', 'woe_working_industry', 'woe_ddong_hist_found', 'woe_prev_cic_loans', 'woe_age', 'woe_JS_VAR_132', 'woe_JS_VAR_101', 'woe_gen_mar', 'woe_cur_cic_loans', 'woe_JS_VAR_159', 'woe_antifraud_score']
-        df = pd.DataFrame(data = test, index = [1], columns = columns)                   
-                          
+        df = pd.DataFrame(data = test,  columns = columns)                   
+         #index = [1],                 
       
-        df = df.to_json()
-        #return XG_MODEL_R1_START_V1.predict_proba(df)[:,1], 200
-        return df, 200
+        #df = df.to_json()
+        return XG_MODEL_R1_START_V1.predict_proba(df)[:,1], 200
+        #return df, 200
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
 
