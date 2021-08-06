@@ -38,8 +38,8 @@ class Predict_proba (Resource):
                           
       
 
-        return XG_MODEL_R1_START_V1.predict_proba(df)[:,1], 200
-        #return test, 200
+        #return XG_MODEL_R1_START_V1.predict_proba(df)[:,1], 200
+        return df, 200
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
 
