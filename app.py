@@ -37,7 +37,7 @@ class Predict_proba (Resource):
         df = pd.DataFrame(data = test, index = [1], columns = columns)                   
                           
       
-
+        df = df.to_json()
         #return XG_MODEL_R1_START_V1.predict_proba(df)[:,1], 200
         return df, 200
         
