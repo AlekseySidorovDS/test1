@@ -38,7 +38,7 @@ class Predict_proba (Resource):
         #  "woe_cur_cic_loans","woe_JS_VAR_159","woe_antifraud_score"]
         #df = pd.DataFrame(data = array.reshape(1,-1), index = [1], columns = columns)                   
                           
-        model_result = XG_MODEL_R1_START_V1.predict_proba(test)[:,1]
+        #model_result = XG_MODEL_R1_START_V1.predict_proba(test)[:,1]
 
 
         return test[1], 200
