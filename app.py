@@ -30,10 +30,12 @@ class Predict_proba (Resource):
         
         args=parser.parse_args()
         X=[args["woe_prev_cls2cur_opn_dd"], args["woe_prev_max_dpd"], args["woe_prev_cred_max_dpd_lp"], args["woe_gender"], args["woe_working_industry"], args["woe_ddong_hist_found"], args["woe_prev_cic_loans"], args["woe_age"], args["woe_JS_VAR_132"], args["woe_JS_VAR_101"], args["woe_gen_mar"], args["woe_cur_cic_loans"], args["woe_JS_VAR_159"], args["woe_antifraud_score"]]
+        
+        array = np.array(X)
+        
+        #model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
 
-        model_result = XG_MODEL_R1_START_V1.predict_proba(X)[1]
-
-        return model_result, 200
+        return array, 200
 
         
 api.add_resource(Predict_proba,"/XG_MODEL_R1_START_V1/")
