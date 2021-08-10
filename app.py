@@ -198,10 +198,10 @@ class Predict_proba (Resource):
         df.loc[df["bin_JS_VAR_159"] == "(2400.0, inf]", "woe_JS_VAR_159"] =   0.524485
         df.loc[df["bin_JS_VAR_159"] == "nan", "woe_JS_VAR_159"] = -0.010646
         
-        df["bin_JS_VAR_159"] = ""
-        df.loc[df["JS_VAR_159"] != 0, "bin_JS_VAR_159"] = "nan"
-        df.loc[df["JS_VAR_159"] <= 0.49, "bin_JS_VAR_159"] = "(-inf, 0.49]"
-        df.loc[df["JS_VAR_159"] > 0.49, "bin_JS_VAR_159"] = "(0.49, 0.98]"
+        df["bin_antifraud_score"] = ""
+        df.loc[df["antifraud_score"] != 0, "bin_antifraud_score"] = "nan"
+        df.loc[df["antifraud_score"] <= 0.49, "bin_antifraud_score"] = "(-inf, 0.49]"
+        df.loc[df["antifraud_score"] > 0.49, "bin_antifraud_score"] = "(0.49, 0.98]"
         
         df["woe_antifraud_score"] = ""
         df.loc[df["bin_antifraud_score"] == "(-inf, 0.49]", "woe_antifraud_score"] =  0.081754
