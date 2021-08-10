@@ -57,7 +57,7 @@ class Predict_proba (Resource):
         
         columns = ['prev_cls2cur_opn_dd', 'prev_max_dpd', 'prev_cred_max_dpd_lp', 'gender', 'working_industry', 'ddong_hist_found', 'prev_cic_loans', 'age', 'JS_VAR_132', 'JS_VAR_101', 'gen_mar', 'cur_cic_loans', 'JS_VAR_159', 'antifraud_score']
         df = pd.DataFrame(data = data,  columns = columns) 
-        
+        df = df.astype(float)
         
         df["bin_prev_cls2cur_opn_dd"] = ""
         df.loc[df["prev_cls2cur_opn_dd"] <= 4, "bin_prev_cls2cur_opn_dd"] = "(1.0, 4.0]"
